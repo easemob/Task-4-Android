@@ -246,7 +246,7 @@ dependencies {
     implementation 'io.hyphenate:hyphenate-chat:3.8.2'
 
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.2'
-
+    implementation 'com.github.kaisengao:KsgLikeView:1.0.1'
 }
 
 
