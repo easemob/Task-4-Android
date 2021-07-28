@@ -83,12 +83,10 @@ object UStore {
         huati.forEach {
             list.add(HuaTiHotModel(it, getHuaTiSql(it.id)))
         }
-        return list.apply {
-            this.forEach {
-                ULog.d(HJson.toJson(it))
-            }
-        }
+        return list.sortedByDescending { it.like }
     }
+
+
 
 
 

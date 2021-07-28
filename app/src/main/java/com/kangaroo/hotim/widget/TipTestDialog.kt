@@ -17,7 +17,9 @@ import com.kangraoo.basektlib.tools.tip.Tip
 import com.kangraoo.basektlib.tools.tip.TipToast
 import com.kangraoo.basektlib.widget.common.DialogPopupConfig
 import com.kangraoo.basektlib.widget.dialog.LibBaseDialog
+import com.qdedu.baselibcommon.ui.activity.WebPageActivity
 import huati
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_test_tip.view.*
 
 /**
@@ -37,16 +39,29 @@ class TipTestDialog(context: Context, iDialogPopup: DialogPopupConfig = DialogPo
         contentView.recycle.layoutManager = LinearLayoutManager(context)
         tipAdapter  = TipAdapter()
         contentView.recycle.adapter = tipAdapter
-
+        contentView.live_view.addLikeImage(R.mipmap.ic_like_red);
+        contentView.live_view.addLikeImage(R.mipmap.ic_like_red);
+        contentView.live_view.addLikeImage(R.mipmap.ic_like_red);
+        contentView.live_view.addLikeImage(R.mipmap.ic_like_red);
+        contentView.live_view.addLikeImage(R.mipmap.ic_like_red);
+        contentView.live_view.addLikeImage(R.mipmap.ic_like_red);
+        contentView.live_view.addLikeImage(R.mipmap.ic_like_red);
+        contentView.live_view.addLikeImage(R.mipmap.ic_like_red);
+        contentView.live_view.addLikeImage(R.mipmap.ic_like_red);
         val list = getZhengTi().toMutableList()
 //        list.add(HuaTiHotModel(huati[0],1000))
         tipAdapter?.setNewInstance(list)
-        tipAdapter?.addChildClickViewIds(R.id.like)
+        tipAdapter?.addChildClickViewIds(R.id.like,R.id.content)
         tipAdapter?.setOnItemChildClickListener(object : OnItemChildClickListener{
             override fun onItemChildClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
                 when(view.id){
                     R.id.like ->{
+                        live_view.addFavor()
                         likeViewClick?.onClickLike(adapter.data[position] as HuaTiHotModel)
+                    }
+                    R.id.content ->{
+                        var data = (adapter.data[position] as HuaTiHotModel).huaTiModel
+                        WebPageActivity.start(context,data.url,data.name,titleVisible = true)
                     }
                 }
             }

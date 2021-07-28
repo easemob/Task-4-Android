@@ -24,6 +24,7 @@
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:layout_gravity="top"
+        android:textColor="@color/lib_color_blue"
         android:text="话题" />
 
     <TextView

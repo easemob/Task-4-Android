@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -11,4 +11,12 @@
         android:id="@+id/recycle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-</LinearLayout>
+    <com.kaisengao.likeview.like.KsgLikeView
+        android:id="@+id/live_view"
+        android:layout_width="75dp"
+        android:layout_height="200dp"
+        app:ksg_curve_duration="4500"
+        android:layout_gravity="bottom|right"
+        app:ksg_default_image="@mipmap/ic_like_red"
+        app:ksg_enter_duration="1500"/>
+</FrameLayout>

@@ -86,7 +86,7 @@ class MainActivity : BActivity(),MyDownTimer.ITimer{
 
         LiveEventBus.get<RenEvent>(MqttUtil.toRen, RenEvent::class.java).observe(this, Observer {
             runOnUiThread {
-                liveNum.text = "在线人数"+UStore.set.size
+                liveNum.text = UStore.set.size.toString()
             }
         })
 
@@ -125,7 +125,7 @@ class MainActivity : BActivity(),MyDownTimer.ITimer{
                 dialog?.refresh()
 
                 MqttUtil.message(MqttUtil.like,HJson.toJson(LikeModel(UStore.getUser()!!.name,0,h.huaTiModel.id)))
-                live_view.addFavor()
+//                live_view.addFavor()
 
             }
 
@@ -154,7 +154,7 @@ class MainActivity : BActivity(),MyDownTimer.ITimer{
         recycle.layoutManager = layoutManager
         recycle.adapter = adapter
 
-        liveNum.text = "在线人数"+1
+        liveNum.text = "1"
         launch {
             val user = UStore.getUser()
             showProgressingDialog("加载数据中")
