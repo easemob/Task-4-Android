@@ -22,7 +22,7 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:layout_gravity="center_horizontal"
-        android:text="Hi. Wellcome 环信MQTT消息云"
+        android:text="Hi. Welcome 环信MQTT消息云"
         android:layout_marginTop="40dp"
         />
 
