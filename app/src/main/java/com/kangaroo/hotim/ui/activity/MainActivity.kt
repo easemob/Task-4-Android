@@ -237,7 +237,13 @@ class MainActivity : BActivity(),MyDownTimer.ITimer{
             edit.setText("")
             false
         }
+        send.setOnClickListener {
+            var k = TextIntroduceEntity(UStore.getUser()!!.name,edit.text.toString(),huati[idRandom[id]].id)
+            MqttUtil.message(MqttUtil.messageData, HJson.toJson(k))
+            UStore.putMessage(k,huati[idRandom[id]].id)
 
+            edit.setText("")
+        }
 
     }
 

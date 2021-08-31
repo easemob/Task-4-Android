@@ -178,7 +178,8 @@
         />
 
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -190,8 +191,9 @@
 
         <EditText
             android:id="@+id/edit"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_gravity="center"
             android:hint="请输入评价"
             android:maxLength="300"
@@ -204,7 +206,19 @@
             app:lib_corners_radius="20dp"
             app:lib_solid_color="@color/white" />
 
-    </FrameLayout>
+        <TextView
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:padding="5dp"
+            android:layout_margin="4dp"
+            style="@style/btnWhiteStyle"
+            android:text="发送"
+            />
+
+    </LinearLayout>
     <TextView
         android:id="@+id/liveNum"
         android:layout_width="wrap_content"
